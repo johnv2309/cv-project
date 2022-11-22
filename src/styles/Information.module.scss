@@ -1,0 +1,109 @@
+@use "variables" as *;
+
+.information {
+  background-color: $gray;
+  color: $creamWhite;
+  background-image: url(../assets/images/polka-dots.svg);
+  width: 70%;
+  padding: 0 1rem;
+
+  h2 {
+    color: $orange;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  section {
+    padding: 0.75rem;
+  }
+
+  & > section:not(:last-child) {
+    border-bottom: 1px solid $orange;
+  }
+
+  &__contact {
+    display: flex;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        svg {
+          height: 2.5rem;
+          width: 2.5rem;
+          border: 2px solid $orange;
+          border-radius: 50%;
+          padding: 0.25rem;
+        }
+      }
+    }
+  }
+
+  &__education {
+    p {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.875rem;
+      strong {
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__experience {
+    div {
+      display: flex;
+      flex-direction: column;
+
+      ul {
+        padding: 0 2rem;
+        list-style: outside;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  &__skills {
+    color: $orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    .skills {
+      &__slider {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        p {
+          padding-right: 1rem;
+          grid-column: 1;
+          text-align: end;
+        }
+        strong {
+          grid-column: 2;
+          background-color: $cream;
+          height: 1.25rem;
+          width: 10rem;
+          span {
+            display: block;
+            background-color: $orange;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

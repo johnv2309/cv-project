@@ -1,0 +1,9 @@
+@use "./styles/variables" as *;
+
+.App {
+  font-family: $font;
+  flex: 1;
+  width: 50rem;
+  padding: 1rem 0;
+  display: flex;
+}
