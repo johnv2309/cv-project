@@ -1,18 +1,26 @@
 import styles from "../styles/Information.module.scss";
-import { DeviceMobile, MapPin, UserSquare } from "phosphor-react";
+import { DeviceMobile, GithubLogo, MapPin, UserSquare } from "phosphor-react";
 import Skill from "./Skill";
+import { Experience } from "./Experience";
 
 export function Information() {
   const person = {
+    experience: [
+      {
+        where: "Desenvolvedor Frontend",
+        when: "Atual",
+        tasks: [
+          "Desenvolvendo aplicações frontend com React, Styled Components e Javascript",
+        ],
+      },
+    ],
     skills: [
-      { name: "Report Findings", amount: "90" },
-      { name: "Lab Research", amount: "80" },
-      { name: "Lab Testing", amount: "70" },
-      { name: "Presentation", amount: "50" },
-      { name: "Analysis", amount: "90" },
-      { name: "Test Proposals", amount: "80" },
-      { name: "Chemistry", amount: "70" },
-      { name: "Experimentation", amount: "50" },
+      { name: "HTML", amount: "70" },
+      { name: "CSS / SCSS", amount: "75" },
+      { name: "CSS-in-JS", amount: "60" },
+      { name: "Javascript", amount: "75" },
+      { name: "Typescript", amount: "50" },
+      { name: "React", amount: "60" },
     ],
   };
   return (
@@ -21,53 +29,47 @@ export function Information() {
         <ul>
           <li>
             <MapPin color={"#f6b64c"} />
-            8001 Tilda Lane, Monseil, NY.
+            São José dos Pinhais, Roseira - PR
           </li>
           <li>
             <DeviceMobile color={"#f6b64c"} />
-            1-905-509-5900
+            (41) 99229-5501
           </li>
           <li>
             <UserSquare color={"#f6b64c"} />
-            afournier@uwaterloo.com
+            jv.pc2309@gmail.com
+          </li>
+          <li>
+            <GithubLogo color={"#f6b64c"} />
+            github.com/johnv2309
           </li>
         </ul>
       </section>
       <section className={styles.information__education}>
-        <h2>Education</h2>
+        <h2>Educação</h2>
         <p>
-          <strong>University of Waterloo</strong>
-          <span>2020-2024</span>
-          Bachelor of Sciences, Environmental Sciences Specialist
+          <strong>Colégio Estadual Tarsila do Amaral</strong>
+          <span>2018</span>
+          Ensino médio completo
+        </p>
+        <p>
+          <strong>Udemy</strong>
+          <span>2022</span>
+          Javascript iniciante ao avançado
         </p>
       </section>
       <section className={styles.information__experience}>
-        <h2>Co-op Placement Experience</h2>
-        <div>
-          <strong>Lyfe Science Co-op</strong>
-          <span>2022 Lab Technician</span>
-          <ul>
-            <li>
-              Carried out everyday tasks as part of ongoing research study
-            </li>
-            <li>
-              Reported findings, contributed hypothesis and help co-author a
-              professional findings report
-            </li>
-          </ul>
-        </div>
-        <div>
-          <strong>Geology Point</strong>
-          <span>2023 Field Technician</span>
-          <ul>
-            <li>Tested water samples around the world</li>
-            <li>Drew conclusions based on highly-controlled experimentation</li>
-            <li>Presented findings at a Water Stewardship Conferece</li>
-          </ul>
-        </div>
+        <h2>Experiência</h2>
+        {person["experience"].map((experience) => (
+          <Experience
+            where={experience.where}
+            when={experience.when}
+            task={experience.tasks}
+          />
+        ))}
       </section>
       <section className={styles.information__skills}>
-        <h2>Skills & Expertise</h2>
+        <h2>Habilidades</h2>
         <div className={styles.skills__slider}>
           {person["skills"].map((skill) => (
             <Skill key={skill.name} skill={skill.name} amount={skill.amount} />

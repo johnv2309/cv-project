@@ -1,9 +1,13 @@
-export function Experience({ where, time, ...job }) {
+export function Experience({ where, when, task = [] }) {
   return (
     <div>
       <strong>{where}</strong>
-      <span>{time}</span>
-      <ul></ul>
+      <span>{when}</span>
+      <ul>
+        {task.map((task) => (
+          <li>{task}</li>
+        ))}
+      </ul>
     </div>
   );
 }
